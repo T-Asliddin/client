@@ -9,7 +9,7 @@ const Index = () => {
   const [modal, setModal] = useState(false);
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
-  const [params, setParams] = useState({ page: 1, limit: 6 });
+  const [params, setParams] = useState({ page: 1, limit: 6 ,name:"" });
   const handleChange = (event, value) => {
     setParams({
       ...params,
@@ -35,6 +35,10 @@ const Index = () => {
   }, [params]);
 
   const inputChange = (e) => {
+    setParams({
+      ...params,
+      name:e.target.value
+    })
     console.log(e.target.value);
   };
   return (
@@ -48,8 +52,8 @@ const Index = () => {
       <div className="flex flex-col gap-2">
         <div className=" flex justify-between ">
           <input
-          className="border-solid border-2 border-sky-600 rounded-md w-[400px] "
-            type="search"
+          className="border-[2px] border-blue-600 rounded-md w-[400px] "
+            type="text"
             placeholder="Search..."
             id="search"
             onChange={inputChange}

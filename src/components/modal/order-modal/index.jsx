@@ -28,7 +28,7 @@ export default function BasicModal({ modal, close, item }) {
   const [data, setData] = useState([]);
   const getdata = async () => {
     try {
-      const response = await service.getallhy  ();
+      const response = await service.getall();
       if (response.status === 200 && response.data.services) {
         setData(response.data.services);
       }
